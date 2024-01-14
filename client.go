@@ -44,7 +44,7 @@ func NewClient(cfg *Config) (*Client, error) {
 	}
 
 	c := &Client{
-		httpc: resty.New().AddRetryAfterErrorCondition().SetRetryCount(5).SetRateLimiter(rate.NewLimiter(rate.Every(time.Second/50), 100)),
+		httpc: resty.New().AddRetryAfterErrorCondition().SetRetryCount(5).SetRateLimiter(rate.NewLimiter(rate.Every(time.Second/50), 100)).SetLogger(cfg.Logger),
 
 		cfg: cfg,
 	}

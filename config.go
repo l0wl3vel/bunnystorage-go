@@ -6,8 +6,8 @@ import (
 	"time"
 
 	"git.sr.ht/~jamesponddotco/xstd-go/xerrors"
-	"git.sr.ht/~jamesponddotco/xstd-go/xlog"
 	"github.com/l0wl3vel/bunnystorage-go/internal/build"
+	"github.com/sirupsen/logrus"
 )
 
 const (
@@ -58,9 +58,10 @@ const (
 // Logger defines the interface for logging. It is basically a thin wrapper
 // around the standard logger which implements only a subset of the logger API.
 type Logger interface {
-	Printf(format string, v ...any)
+	Errorf(format string, v ...interface{})
+	Warnf(format string, v ...interface{})
+	Debugf(format string, v ...interface{})
 }
-
 // Operation represents an operation that can be performed on a Bunny.net
 // Storage API.
 type Operation int
@@ -138,7 +139,7 @@ func (c *Config) init() {
 	}
 
 	if c.Logger == nil && c.Debug {
-		c.Logger = xlog.DefaultZeroLogger
+		c.Logger = logrus.New()
 	}
 }
 

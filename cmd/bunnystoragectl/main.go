@@ -3,7 +3,7 @@ package main
 import (
 	"os"
 
-	"jamesponddotco/cmd/bunnystoragectl/internal/app"
+	"github.com/l0wl3vel/bunnystorage-go/cmd/bunnystoragectl/internal/app"
 )
 
 func main() {
