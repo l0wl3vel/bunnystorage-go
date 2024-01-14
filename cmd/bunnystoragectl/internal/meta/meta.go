@@ -26,11 +26,7 @@ const (
 // interact with the service.
 func Client(c *cli.Context) (*bunnystorage.Client, error) {
 	cfg := &bunnystorage.Config{
-		Application: &bunnystorage.Application{
-			Name:    Name,
-			Version: Version,
-			Contact: Website,
-		},
+		UserAgent: fmt.Sprintf("%v/%v", Name, Version),
 		StorageZone: c.String("storage-zone"),
 		Key:         c.String("key"),
 		Endpoint:    bunnystorage.Parse(c.String("endpoint")),

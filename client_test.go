@@ -24,7 +24,6 @@ func TestClient_NewClient(t *testing.T) {
 		{
 			name: "success with default Application",
 			giveConfig: &bunnystorage.Config{
-				Application: bunnystorage.DefaultApplication(),
 				StorageZone: "my-storage-zone",
 				Key:         "my-key",
 				ReadOnlyKey: "my-read-only-key",
@@ -37,20 +36,12 @@ func TestClient_NewClient(t *testing.T) {
 		{
 			name: "success with custom Application and Config",
 			giveConfig: &bunnystorage.Config{
-				Application: nil,
 				StorageZone: "my-storage-zone",
 				Key:         "my-key",
 				ReadOnlyKey: "my-read-only-key",
 				Endpoint:    bunnystorage.EndpointFalkenstein,
 			},
 			wantErr: false,
-		},
-		{
-			name: "error with default Application",
-			giveConfig: &bunnystorage.Config{
-				Application: bunnystorage.DefaultApplication(),
-			},
-			wantErr: true,
 		},
 		{
 			name:       "error with nil Config",
@@ -251,8 +242,8 @@ func TestClient_Download(t *testing.T) {
 				t.Errorf("Download() got = %v, want %v", len(got), len(tt.want))
 			}
 
-			if resp.Status != tt.wantCode {
-				t.Errorf("Download() got = %v, want %v", resp.Status, tt.wantCode)
+			if resp.StatusCode() != tt.wantCode {
+				t.Errorf("Download() got = %v, want %v", resp.StatusCode(), tt.wantCode)
 			}
 		})
 	}
@@ -317,8 +308,8 @@ func TestClient_Upload(t *testing.T) {
 				return
 			}
 
-			if resp.Status != tt.wantCode {
-				t.Errorf("Upload() got = %v, want %v", resp.Status, tt.wantCode)
+			if resp.StatusCode()!= tt.wantCode {
+				t.Errorf("Upload() got = %v, want %v", resp.StatusCode(), tt.wantCode)
 			}
 		})
 	}
@@ -386,8 +377,8 @@ func TestClient_Delete(t *testing.T) {
 				return
 			}
 
-			if resp.Status != tt.wantCode {
-				t.Errorf("Delete() got = %v, want %v", resp.Status, tt.wantCode)
+			if resp.StatusCode()!= tt.wantCode {
+				t.Errorf("Delete() got = %v, want %v", resp.StatusCode(), tt.wantCode)
 			}
 		})
 	}

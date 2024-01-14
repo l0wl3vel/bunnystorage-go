@@ -28,8 +28,8 @@ func DeleteAction(c *cli.Context) error {
 		return fmt.Errorf("%w", err)
 	}
 
-	if resp.Status != http.StatusOK {
-		return fmt.Errorf("%w: %d", ErrFileNotFound, resp.Status)
+	if resp.StatusCode() != http.StatusOK {
+		return fmt.Errorf("%w: %d", ErrFileNotFound, resp.StatusCode())
 	}
 
 	if c.Bool("verbose") {

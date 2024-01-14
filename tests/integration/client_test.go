@@ -50,8 +50,8 @@ func TestClient_List(t *testing.T) {
 		t.Errorf("expected file list to be non-zero, got %d", len(files))
 	}
 
-	if resp.Status != http.StatusOK {
-		t.Errorf("expected status code to be %d, got %d", http.StatusOK, resp.Status)
+	if resp.StatusCode() != http.StatusOK {
+		t.Errorf("expected status code to be %d, got %d", http.StatusOK, resp.StatusCode())
 	}
 }
 
@@ -103,8 +103,8 @@ func TestClient_Download(t *testing.T) {
 		t.Fatalf("download error: %v", err)
 	}
 
-	if resp.Status < 200 || resp.Status >= 300 {
-		t.Errorf("expected file to be downloaded, got status %d", resp.Status)
+	if resp.StatusCode()< 200 || resp.StatusCode()>= 300 {
+		t.Errorf("expected file to be downloaded, got status %d", resp.StatusCode())
 	}
 
 	if len(body) != int(testFileSize) {
@@ -153,8 +153,8 @@ func TestClient_Upload(t *testing.T) {
 		t.Fatalf("upload error: %v", err)
 	}
 
-	if resp.Status != 201 {
-		t.Errorf("expected status code to be 201, got %d", resp.Status)
+	if resp.StatusCode()!= 201 {
+		t.Errorf("expected status code to be 201, got %d", resp.StatusCode())
 	}
 }
 
@@ -201,8 +201,8 @@ func TestClient_Delete(t *testing.T) {
 		t.Fatalf("delete error: %v", err)
 	}
 
-	if resp.Status != 200 {
-		t.Errorf("expected status code to be 204, got %d", resp.Status)
+	if resp.StatusCode()!= 200 {
+		t.Errorf("expected status code to be 204, got %d", resp.StatusCode())
 	}
 
 	_, resp, err = client.Download(ctx, _testPath, testFile)
@@ -210,7 +210,7 @@ func TestClient_Delete(t *testing.T) {
 		t.Fatalf("download error: %v", err)
 	}
 
-	if resp.Status != 404 {
-		t.Errorf("expected status code to be 404, got %d", resp.Status)
+	if resp.StatusCode()!= 404 {
+		t.Errorf("expected status code to be 404, got %d", resp.StatusCode())
 	}
 }

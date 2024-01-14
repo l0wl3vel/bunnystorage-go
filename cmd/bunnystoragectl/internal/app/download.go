@@ -35,8 +35,8 @@ func DownloadAction(c *cli.Context) error {
 		return fmt.Errorf("%w", err)
 	}
 
-	if resp.Status != 200 {
-		return fmt.Errorf("%w: %d", ErrUnexpectedStatusCode, resp.Status)
+	if resp.StatusCode() != 200 {
+		return fmt.Errorf("%w: %d", ErrUnexpectedStatusCode, resp.StatusCode())
 	}
 
 	var (
