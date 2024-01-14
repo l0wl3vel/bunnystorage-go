@@ -9,8 +9,8 @@ import (
 	"path/filepath"
 	"testing"
 
-	"git.sr.ht/~jamesponddotco/bunnystorage-go"
-	"git.sr.ht/~jamesponddotco/bunnystorage-go/internal/testutil"
+	"github.com/l0wl3vel/bunnystorage-go"
+	"github.com/l0wl3vel/bunnystorage-go/internal/testutil"
 )
 
 const _testPath string = "/testdata"

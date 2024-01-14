@@ -5,8 +5,8 @@ import (
 	"os"
 	"path/filepath"
 
-	"git.sr.ht/~jamesponddotco/bunnystorage-go"
-	"git.sr.ht/~jamesponddotco/bunnystorage-go/cmd/bunnystoragectl/internal/meta"
+	"github.com/l0wl3vel/bunnystorage-go"
+	"github.com/l0wl3vel/bunnystorage-go/cmd/bunnystoragectl/internal/meta"
 	"github.com/urfave/cli/v2"
 )
 

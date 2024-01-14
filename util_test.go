@@ -9,7 +9,7 @@ import (
 	"log"
 	"testing"
 
-	"git.sr.ht/~jamesponddotco/bunnystorage-go"
+	"github.com/l0wl3vel/bunnystorage-go"
 )
 
 type ErrorReader struct{}

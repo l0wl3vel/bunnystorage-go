@@ -5,7 +5,7 @@ packages:
   - 'make'
   - 'scdoc'
 sources:
-  - https://git.sr.ht/~jamesponddotco/bunnystorage-go
+  - https://github.com/l0wl3vel/bunnystorage-go
 secrets:
   - c7abfb86-83eb-49a7-8abf-4b400e39e59e # Bunny.net API keys
 tasks:

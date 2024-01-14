@@ -6,7 +6,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"git.sr.ht/~jamesponddotco/bunnystorage-go/cmd/bunnystoragectl/internal/meta"
+	"github.com/l0wl3vel/bunnystorage-go/cmd/bunnystoragectl/internal/meta"
 )
 
 // ApplicationConfig returns the path to the user's configuration file for the

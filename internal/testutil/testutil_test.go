@@ -5,7 +5,7 @@ import (
 	"os"
 	"testing"
 
-	"git.sr.ht/~jamesponddotco/bunnystorage-go/internal/testutil"
+	"github.com/l0wl3vel/bunnystorage-go/internal/testutil"
 )
 
 func TestReadFile(t *testing.T) {

@@ -1,4 +1,4 @@
-module git.sr.ht/~jamesponddotco/bunnystorage-go
+module github.com/l0wl3vel/bunnystorage-go
 
 go 1.20
 

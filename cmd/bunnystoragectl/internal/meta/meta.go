@@ -4,7 +4,7 @@ package meta
 import (
 	"fmt"
 
-	"git.sr.ht/~jamesponddotco/bunnystorage-go"
+	"github.com/l0wl3vel/bunnystorage-go"
 	"github.com/urfave/cli/v2"
 )
 
@@ -19,7 +19,7 @@ const (
 	Description = "A command line interface for BunnyStorage"
 
 	// Website is the website of the application.
-	Website = "https://sr.ht/~jamesponddotco/bunnystorage-go/"
+	Website = "https://github.com/l0wl3vel/bunnystorage-go/"
 )
 
 // Client returns a client for the BunnyStorage API that the application uses to

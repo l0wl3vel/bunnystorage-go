@@ -5,9 +5,9 @@ import (
 	"sync"
 	"time"
 
-	"git.sr.ht/~jamesponddotco/bunnystorage-go/internal/build"
 	"git.sr.ht/~jamesponddotco/xstd-go/xerrors"
 	"git.sr.ht/~jamesponddotco/xstd-go/xlog"
+	"github.com/l0wl3vel/bunnystorage-go/internal/build"
 )
 
 const (

@@ -8,8 +8,8 @@ import (
 	"os"
 	"testing"
 
-	"git.sr.ht/~jamesponddotco/bunnystorage-go"
 	"git.sr.ht/~jamesponddotco/xstd-go/xerrors"
+	"github.com/l0wl3vel/bunnystorage-go"
 )
 
 const (
